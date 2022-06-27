@@ -22,3 +22,14 @@ Feature: Login to website
     Examples: 
       | orderID | firstname | lastname | email          | telephone  | product |
       |     123 | rhutu     | rajuskar | r123@gamil.com | 1223443234 | aghfd   |
+ 
+ 
+@tag3
+Scenario Outline: edit the details
+When user need to edit the Product Returns information
+    Given edit the details  "<orderID1>" "<Firstname1>" "<lastname1>" "<email1>" "<telephone1>" "<product1>"
+    Then click on save
+    
+    Examples: 
+      | orderID1 | firstname1 | lastname1 | email1         | telephone1 | product1 |
+      |      123 | rhutu      | rajuskar  | r123@gamil.com | 1223443234 | aghfd    |
