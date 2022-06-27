@@ -48,15 +48,28 @@ public void open_Product_Returns_page() throws InterruptedException {
 
 @Given("Add Product Return details {string} {string} {string} {string} {string} {string}")
 public void add_Product_Return_details(String orderID, String Firstname, String lastname, String email, String telephone, String product) {
-      driver.findElement(By.xpath("//a[@class='btn btn-primary']/i[@class='fa fa-plus']")).click();
-	  driver.findElement(By.id("input-order-id")).sendKeys(orderID);
-      driver.findElement(By.id("input-firstname")).sendKeys(Firstname);
-	  driver.findElement(By.id("input-lastname")).sendKeys(lastname);
-	  driver.findElement(By.id("input-email")).sendKeys(email);
-	  driver.findElement(By.id("input-telephone")).sendKeys(telephone);
-	  driver.findElement(By.id("input-product")).sendKeys(product);
+      WebElement p1 = driver.findElement(By.xpath("//a[@class='btn btn-primary']/i[@class='fa fa-plus']"));
+      p1.click();
+      WebElement p2 = driver.findElement(By.id("input-order-id"));
+      p2.sendKeys(orderID);
+      WebElement p3 = driver.findElement(By.id("input-firstname"));
+      p3.sendKeys(Firstname);
+      WebElement p4 = driver.findElement(By.id("input-lastname"));
+      p4.sendKeys(lastname);
+      WebElement p5 =driver.findElement(By.id("input-email"));
+      p5.sendKeys(email);
+      WebElement p6 = driver.findElement(By.id("input-telephone"));
+      p6.sendKeys(telephone);
+      WebElement p7 = driver.findElement(By.id("input-product"));
+      p6.sendKeys(product);
 	
 }
+
+private void findElement(By xpath) {
+	// TODO Auto-generated method stub
+	
+}
+
 
 @Given("user clicks on save")
 public void user_clicks_on_save() {
@@ -71,12 +84,18 @@ public void user_need_to_edit_the_Product_Returns_information() {
 
 @Given("edit the details  {string} {string} {string} {string} {string} {string}")
 public void edit_the_details(String orderID1, String Firstname1, String lastname1, String eamil1, String telephone1, String product1) {
-	driver.findElement(By.id("input-order-id")).sendKeys(orderID1);
-    driver.findElement(By.id("input-firstname")).sendKeys(Firstname1);
-	  driver.findElement(By.id("input-lastname")).sendKeys(lastname1);
-	  driver.findElement(By.id("input-email")).sendKeys(eamil1);
-	  driver.findElement(By.id("input-telephone")).sendKeys(telephone1);
-	  driver.findElement(By.id("input-product")).sendKeys(product1);
+	  WebElement e1 = driver.findElement(By.id("input-order-id"));
+	  e1.sendKeys(orderID1);
+	  WebElement e2 = driver.findElement(By.id("input-firstname"));
+	  e2.sendKeys(Firstname1);
+	  WebElement e3 = driver.findElement(By.id("input-lastname"));
+	  e3.sendKeys(lastname1);
+	  WebElement e4 = driver.findElement(By.id("input-email"));
+	  e4.sendKeys(eamil1);
+	  WebElement e5 = driver.findElement(By.id("input-telephone"));
+	  e5.sendKeys(telephone1);
+	  WebElement e6 = driver.findElement(By.id("input-product"));
+	  e6.sendKeys(product1);
 }
 
 @Then("click on save")
