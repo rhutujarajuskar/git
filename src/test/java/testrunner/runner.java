@@ -9,7 +9,14 @@ import cucumber.api.junit.Cucumber;
 
 @CucumberOptions(
 		features = "src/test/java/feature",
-		glue = {"stepdefinition"}
+		glue = {"stepdefinition"},
+		dryRun=false,
+				plugin = {
+						"pretty",
+						"html:reports/htmlreport",
+						"json:reports/jsonreport.json",
+						"junit:reports/xmlreport.xml"
+					}
 		)
 
 public class runner {
